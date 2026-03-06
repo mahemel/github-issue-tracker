@@ -3,9 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Github Issue Tracker | Dashboard</title>
+
+    <link rel="shortcut icon" href="assets/github-logo.png" type="image/x-icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+        @theme {
+            --color-clifford: #da373d;
+            --color-black: #1F2937;
+            --color-blue: #4A00FF;
+            --color-dark-gray: #64748B;
+            --color-light-gray: #E4E4E7;
+            --color-green: #E4E4E7;
+            --color-red: #EF4444;
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/style.css">
 </head>
-<body>
-    <h1>Hi There!</h1>
+<body class="bg-[#F8FAFC] min-h-screen p-5 sm:px-0 sm:py-[40px] xl:py-[78px]">
+    
+    <main>
+        <div class="container mx-auto space-y-4">
+            <div id="issue-btns" class="issue-btns p-6 flex flex-wrap gap-2 bg-white rounded-lg drop-shadow-[0_1px_6px_rgba(0,0,0,0.08)]">
+                <button id="all" class="btn active text-base font-medium text-dark-gray h-10 w-[120px] rounded border-light-gray bg-white">All</button>
+                <button id="open" class="btn text-base font-medium text-dark-gray h-10 w-[120px] rounded border-light-gray bg-white">Open</button>
+                <button id="closed" class="btn text-base font-medium text-dark-gray h-10 w-[120px] rounded border-light-gray bg-white">Closed</button>
+            </div>
+            <!-- Issues Btn -->
+            <div id="issue-counter"></div>
+            <div id="issueContainer" class="grid grid-cols-4 gap-4"></div>
+        </div>
+    </main>
+    
+    <script src="scripts/app.js"></script>
+
 </body>
 </html>
