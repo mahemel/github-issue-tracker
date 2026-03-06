@@ -28,7 +28,7 @@
 
     <link rel="stylesheet" href="styles/style.css">
 </head>
-<body class="bg-[#F8FAFC] min-h-screen p-5 sm:px-0 sm:py-[78px]">
+<body class="bg-[#F8FAFC] min-h-screen p-5 sm:px-0 sm:py-[40px] xl:py-[78px]">
 
     <div class="card bg-white w-full max-w-lg shadow-sm mx-auto">
         <div class="card-body p-5 sm:p-8 gap-4 sm:gap-6">
@@ -41,21 +41,21 @@
                     <p class="text-center text-dark-gray">Sign in to manage your issues</p>
                 </div>
             </div>
-
+            
             <fieldset class="fieldset p-0 gap-2">
-                <label class="label font-medium text-black text-base">Username</label>
+                <label for="username" class="label font-medium text-black text-base">Username</label>
                 <div class="space-y-1.5 mb-2">
-                    <input type="text" class="input w-full text-base h-12 rounded-lg border-light-gray text-dark-gray" placeholder="Enter Username" />
+                    <input id="username" type="text" class="input w-full text-base h-12 rounded-lg border-light-gray text-dark-gray" placeholder="Enter Username" />
                     <p class="text-blue text-sm">Default: admin</p>
                 </div>
 
-                <label class="label font-medium text-black text-base">Password</label>
+                <label for="password" class="label font-medium text-black text-base">Password</label>
                 <div class="space-y-1.5">
-                    <input type="password" class="input w-full text-base h-12 rounded-lg border-light-gray text-dark-gray" placeholder="Enter Password" />
+                    <input id="password" type="password" class="input w-full text-base h-12 rounded-lg border-light-gray text-dark-gray" placeholder="Enter Password" />
                     <p class="text-blue text-sm">Default: admin123</p>
                 </div>
                 
-                <button class="btn bg-blue mt-4 text-base h-12 rounded-lg text-white">Sign In</button>
+                <button id="signInBtn" class="btn bg-blue mt-4 text-base h-12 rounded-lg text-white">Sign In</button>
             </fieldset>
             <div class="flex w-full flex-col">
                 <div class="divider text-black text-base m-0 gap-2">OR</div>
@@ -72,6 +72,7 @@
         </div>
     </div>
     
+    <script src="scripts/app.js"></script>
 
 </body>
 </html>
