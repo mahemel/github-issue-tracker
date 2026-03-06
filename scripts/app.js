@@ -13,7 +13,7 @@ if(issueBtns) {
         const targetBtn = event.target.closest('.btn');
 
         if(targetBtn) {
-        const targetType = targetBtn.getAttribute('id');
+            const targetType = targetBtn.getAttribute('id');
             removeActiveState();
 
             targetBtn.classList.add('active');
@@ -22,7 +22,9 @@ if(issueBtns) {
     });
 }
 
-const loadAllIssues = async () => {
+const loadAllIssues = async (type = 'all') => {
+
+    loadingIcon(true);
     const url = 'https://phi-lab-server.vercel.app/api/v1/lab/issues';
 
     const issues = await fetch(url);
@@ -30,7 +32,14 @@ const loadAllIssues = async () => {
 
     const data = json.data;
 
-    displayIssues(data);
+    if(type === 'all') {
+        displayIssues(data);
+    }
+    else {
+        const filteredData = data.filter(item => item.status === type);
+
+        displayIssues(filteredData);
+    }
 }
 
 const displayIssues = (issues) => {
@@ -50,6 +59,21 @@ const displayIssues = (issues) => {
         
         issueContainer.appendChild(card)
     });
+
+    loadingIcon(false);
+}
+
+const loadingIcon = (status) => {
+    if(status) {
+        document.getElementById('spinner').classList.remove('hidden');
+        document.getElementById('issue-counter').classList.add('hidden');
+        document.getElementById('issueContainer').classList.add('hidden');
+    } else {
+        document.getElementById('spinner').classList.add('hidden');
+        document.getElementById('issue-counter').classList.remove('hidden');
+        document.getElementById('issueContainer').classList.remove('hidden');
+
+    }
 }
 
 loadAllIssues();
