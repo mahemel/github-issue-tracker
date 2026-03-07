@@ -13,3 +13,81 @@
     background: #4A00FF;
     color: #fff;
 }
+.status {
+    box-shadow: none;
+    width: 12px;
+    height: 12px;
+    position: relative;
+}
+.status.status-accent {
+    background: #00A96E;
+}
+.status.status-secondary {
+    background: #A855F7;
+}
+.priority {
+    width: 80px;
+    height: 24px;
+    border: none;
+}
+.priority-high {
+    background: #FEECEC;
+    color: #EF4444;
+}
+.priority-medium {
+    background: #FFF6D1;
+    color: #F59E0B;
+}
+.priority-low {
+    background: #EEEFF2;
+    color: #9CA3AF;
+}
+
+#issueContainer .card {
+    border-top: 3px solid #fff;
+    cursor: pointer;
+}
+#issueContainer .status-open {
+    border-color: #00A96E;
+}
+#issueContainer .status-closed {
+    border-color: #A855F7;
+}
+.badges .badge {
+    height: 20px;
+    padding: 0;
+    gap: 4px;
+    padding: 0 5px;
+    font-size: 10px;
+    text-transform: uppercase;
+    align-items: center;
+    line-height: 1em;
+}
+.badges .badge img {
+    width: 12px;
+}
+.enhance {
+    background: #DEFCE8;
+    color: #00A96E;
+    border: 1px solid #BBF7D0;
+}
+.issue-badge {
+    background: #ADBFFF;
+    color: #0037FF;
+    border: 1px solid #6988F9;
+}
+.help {
+    background: #FFF8DB;
+    color: #D97706;
+    border: 1px solid #FDE68A;
+}
+.bug {
+    background: #FEECEC;
+    color: #EF4444;
+    border: 1px solid #FECACA;
+}
+.good-first {
+    background: #FFF6D1;
+    color: #F59E0B;
+    border: 1px solid #F59E0B;
+}

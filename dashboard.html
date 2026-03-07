@@ -17,7 +17,7 @@
             --color-blue: #4A00FF;
             --color-dark-gray: #64748B;
             --color-light-gray: #E4E4E7;
-            --color-green: #E4E4E7;
+            --color-green: #00A96E;
             --color-red: #EF4444;
         }
     </style>
@@ -40,12 +40,58 @@
             <!-- Issues Btn -->
             
             <div id="spinner" class="flex justify-center hidden"><span class="loading loading-dots loading-xl"></span></div>
-            
-            <div id="issue-counter"></div>
-            <div id="issueContainer" class="grid grid-cols-4 gap-4"></div>
+
+            <div class="issues-wrapper bg-white rounded-lg drop-shadow-[0_1px_6px_rgba(0,0,0,0.08)]">
+
+                <div id="issue-count-wrap" class="p-6 flex flex-wrap justify-between items-center border-b border-light-gray">
+                    <div class="flex items-center gap-2">
+                        <img src="assets/aperture.svg" alt="">
+
+                        <div class="flex flex-col">
+                            <h2 class="font-semibold text-xl text-black"><span id="issue-counter"></span> Issues</h2>
+                            <p class="text-base text-dark-gray">Track and manage your project issues</p>
+                        </div>
+                    </div>
+                    <ul class="flex gap-4">
+                        <li class="flex gap-2 items-center"><div aria-label="status" class="status status-accent"></div> Open</li>
+                        <li class="flex gap-2 items-center"><div aria-label="status" class="status status-secondary"></div> Closed</li>
+                    </ul>
+                    
+                </div>
+
+                
+                <div id="issueContainer" class="grid grid-cols-4 gap-3 p-6 bg-[#fafafa]">
+                    
+                </div>
+            </div>
         </div>
     </main>
-    
+    <!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+
+<dialog id="issue_modal" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box">
+        <div id="issue-detail">
+            <h2>Fix broken image uploads</h2>
+
+            <div class="flex items-center">
+                <button>Open</button>
+                &bull;
+                Opened by Fahim Ahmed
+                &bull;
+                22/02/2026
+            </div>
+
+            <p>The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.</p>
+        </div>
+        <div class="modal-action">
+            <form method="dialog">
+                <button class="btn btn-primary">Close</button>
+            </form>
+        </div>
+    </div>
+</dialog>
+
     <script src="scripts/app.js"></script>
 
 </body>
