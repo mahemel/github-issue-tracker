@@ -200,3 +200,24 @@ const displayIssueDetail = (issuedetail) => {
 }
 
 loadAllIssues();
+
+
+document.getElementById('searchBtn').addEventListener('click', () => {
+
+    const inputSearch = document.getElementById('search-input');
+    const searchValue = inputSearch.value;
+
+    if(searchValue === '') {
+        alert('Please enter keyword to search.')
+        return;
+    }
+
+    const url = `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchValue}`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(json => {
+            displayIssues(json.data);
+            removeActiveState();
+        })
+});
