@@ -145,7 +145,6 @@ const openDetail = (id) => {
         .then(response => response.json())
         .then(json => {
             displayIssueDetail(json.data);
-            console.log(json.data)
         })
     
 }
