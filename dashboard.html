@@ -60,7 +60,7 @@
                 </div>
 
                 
-                <div id="issueContainer" class="grid grid-cols-4 gap-3 p-6 bg-[#fafafa]">
+                <div id="issueContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 p-6 bg-[#fafafa]">
                     
                 </div>
             </div>
@@ -70,23 +70,12 @@
 <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
 
 <dialog id="issue_modal" class="modal modal-bottom sm:modal-middle">
-    <div class="modal-box">
-        <div id="issue-detail">
-            <h2>Fix broken image uploads</h2>
-
-            <div class="flex items-center">
-                <button>Open</button>
-                &bull;
-                Opened by Fahim Ahmed
-                &bull;
-                22/02/2026
-            </div>
-
-            <p>The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.</p>
+    <div class="modal-box p-6 rounded-xl">
+        <div id="issue-detail" class="space-y-6">
         </div>
         <div class="modal-action">
             <form method="dialog">
-                <button class="btn btn-primary">Close</button>
+                <button class="btn btn-primary text-white font-normal">Close</button>
             </form>
         </div>
     </div>

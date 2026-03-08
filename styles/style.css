@@ -91,3 +91,20 @@
     color: #F59E0B;
     border: 1px solid #F59E0B;
 }
+.issue-detail button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.modal-box .priority {
+    width: auto;
+    padding: 0 10px;
+}
+.modal-box .priority-high {
+    background: #EF4444;
+    color: #fff;
+}
+
+.btn.bg-green.closed {
+    background: #A855F7;
+}

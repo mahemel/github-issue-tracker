@@ -12,6 +12,10 @@ if(issueBtns) {
     issueBtns.addEventListener('click', (event) => {
         const targetBtn = event.target.closest('.btn');
 
+        if (targetBtn.classList.contains('active')) {
+            return;
+        }
+
         if(targetBtn) {
             const targetType = targetBtn.getAttribute('id');
             removeActiveState();
@@ -86,14 +90,14 @@ const displayIssues = (issues) => {
         card.setAttribute('onclick', `openDetail(${id})`)
 
 
-
         if(description.length > 63) {
             description = description.slice(0, 63) + '...';
         }
         
         const labelsHtml = processIssueType(issue.labels);
 
-
+        const formatedDate = new Date(createdAt).toLocaleDateString();
+        
         card.innerHTML = `
             <div class="card-detail p-4 space-y-3">
 
@@ -104,7 +108,7 @@ const displayIssues = (issues) => {
                 </div>
 
                 <h3 class="font-semibold text-sm leading-tight text-black">${title}</h3>
-                <p class="text-xs font-regular leading-tight text-dark-gray">${description}</p>
+                <p class="text-xs font-normal leading-tight text-dark-gray">${description}</p>
 
                 <div class="flex flex-wrap gap-[2px] badges">
                     ${labelsHtml}
@@ -112,8 +116,8 @@ const displayIssues = (issues) => {
             </div>
 
             <div class="author-info p-4 border-t border-light-gray flex flex-col gap-2">
-                <p class="text-xs font-regular leading-none text-dark-gray">#${id} by ${author}</p>
-                <p class="text-xs font-regular leading-none text-dark-gray">${createdAt}</p>
+                <p class="text-xs font-normal leading-none text-dark-gray">#${id} by ${author}</p>
+                <p class="text-xs font-normal leading-none text-dark-gray">${formatedDate}</p>
             </div>
         `;
         
@@ -139,12 +143,15 @@ const openDetail = (id) => {
 
     fetch(url)
         .then(response => response.json())
-        .then(json => displayIssueDetail(json.data))
+        .then(json => {
+            displayIssueDetail(json.data);
+            console.log(json.data)
+        })
     
 }
 
 const displayIssueDetail = (issuedetail) => {
-    const {id, title, description,status, priority, author, createdAt} = issuedetail;
+    const {title, description,status, priority, author, createdAt, assignee} = issuedetail;
 
     const detailDiv = document.getElementById('issue-detail');
     detailDiv.innerHTML = '';
@@ -152,21 +159,41 @@ const displayIssueDetail = (issuedetail) => {
     
     const labelsHtml = processIssueType(issuedetail.labels);
 
-    detailDiv.innerHTML = `
-    
+    const formatedDate = new Date(createdAt).toLocaleDateString('en-BD');
 
-                <h3 class="font-semibold text-sm leading-tight text-black">${title}</h3>
+    detailDiv.innerHTML = `            
+        <div>
+            <h2 class="font-bold text-2xl text-black mb-1">${title}</h2>
 
-                ${(status === 'open') ? 'Opened"' : 'Closed"'} ${author} ${createdAt}
+            <div class="flex items-center text-dark-gray gap-2 text-xs mb-6">
+                <button class="btn bg-green text-white font-normal h-6 rounded-full text-xs px-[6px] border-0 ${(status === 'open') ? 'opened' : 'closed'}">
+                    ${(status === 'open') ? 'Opened' : 'Closed'}
+                </button>
 
+                &bull;
+                <span>Opened by ${author}</span>
+                &bull;
+                <span>${formatedDate}</span>
+            </div>
+        </div>
 
-                <div class="flex flex-wrap gap-1 badges">
-                    ${labelsHtml}
-                </div>
+        <div class="flex flex-wrap gap-[2px] badges">
+            ${labelsHtml}
+        </div>
 
-                <p class="text-xs font-regular leading-tight text-dark-gray">${description}</p>
+        <p class="text-base font-normal leading-tight text-dark-gray">${description}</p>
 
-                    <div class="badge text-xs uppercase rounded-full priority priority-${priority}">${priority}</div>
+        <div class="grid grid-cols-2 bg-[#F8FAFC] p-4 rounded-lg gap-2">
+            <p class="text-base font-normal text-dark-gray">
+                Assignee: <br> 
+                <strong class="text-black">${assignee === ''? 'Not assigned yet' : assignee}</strong>
+            </p>
+
+            <div>
+                <p class="text-base font-normal text-dark-gray">Priority:</p> 
+                <div class="badge text-xs uppercase rounded-full priority priority-${priority}">${priority}</div>
+            </div>
+        </div>
     `;
     document.getElementById('issue_modal').showModal();
 
