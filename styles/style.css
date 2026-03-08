@@ -1,6 +1,10 @@
 * {
     font-family: "Geist", sans-serif;
 }
+.search-section input {
+    background: url(../assets/search-icon.svg) 14px center no-repeat;
+    padding-left: 36px;
+}
 .divider::before,
 .divider::after {
     background: #E4E4E7;
