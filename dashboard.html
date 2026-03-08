@@ -34,21 +34,21 @@
             <div class="flex-1 flex items-center gap-[3px]">
                 <img src="assets/github-logo.png" alt="Logo" class="w-9">
 
-                <h1 class="text-black text-xl sm:text-2xl leading-none font-semibold">GitHub Issues Tracker</h1>
+                <h1 class="text-black text-lg sm:text-2xl leading-none font-semibold hidden sm:block">GitHub Issues Tracker</h1>
             </div>
             <div class="flex gap-2 search-section">
-                <input id="search-input" autocapitalize="off" type="text" placeholder="Search issues..." class="input input-bordered w-24 md:w-auto" />
+                <input id="search-input" autocapitalize="off" type="text" placeholder="Search issues..." class="input input-bordered w-[140px] md:w-auto" />
                 <button id="searchBtn" class="btn btn-primary font-normal" type="button">Search</button>
             </div>
         </div>
     </header>
 
     <main class=" px-5">
-        <div class="container mx-auto space-y-4 sm:py-[40px] xl:py-[78px]">
-            <div id="issue-btns" class="issue-btns p-6 flex flex-wrap gap-2 bg-white rounded-lg drop-shadow-[0_1px_6px_rgba(0,0,0,0.08)]">
-                <button id="all" class="btn active text-base font-medium text-dark-gray h-10 w-[120px] rounded border-light-gray bg-white">All</button>
-                <button id="open" class="btn text-base font-medium text-dark-gray h-10 w-[120px] rounded border-light-gray bg-white">Open</button>
-                <button id="closed" class="btn text-base font-medium text-dark-gray h-10 w-[120px] rounded border-light-gray bg-white">Closed</button>
+        <div class="container mx-auto space-y-4 py-[16px] xl:py-[60px]">
+            <div id="issue-btns" class="issue-btns p-3 sm:p-6 flex flex-wrap justify-center sm:justify-start gap-2 bg-white rounded-lg drop-shadow-[0_1px_6px_rgba(0,0,0,0.08)]">
+                <button id="all" class="btn active text-base font-medium text-dark-gray h-10 w-[90px] sm:w-[120px] rounded border-light-gray bg-white">All</button>
+                <button id="open" class="btn text-base font-medium text-dark-gray h-10 w-[90px] sm:w-[120px] rounded border-light-gray bg-white">Open</button>
+                <button id="closed" class="btn text-base font-medium text-dark-gray h-10 w-[90px] sm:w-[120px] rounded border-light-gray bg-white">Closed</button>
             </div>
             <!-- Issues Btn -->
             
@@ -56,16 +56,16 @@
 
             <div class="issues-wrapper bg-white rounded-lg drop-shadow-[0_1px_6px_rgba(0,0,0,0.08)]">
 
-                <div id="issue-count-wrap" class="p-6 flex flex-wrap justify-between items-center border-b border-light-gray">
+                <div id="issue-count-wrap" class="p-3 sm:p-6 flex flex-wrap justify-between items-center border-b border-light-gray">
                     <div class="flex items-center gap-2">
                         <img src="assets/aperture.svg" alt="">
 
                         <div class="flex flex-col">
                             <h2 class="font-semibold text-xl text-black"><span id="issue-counter"></span> Issues</h2>
-                            <p class="text-base text-dark-gray">Track and manage your project issues</p>
+                            <p class="text-sm sm:text-base text-dark-gray">Track and manage your project issues</p>
                         </div>
                     </div>
-                    <ul class="flex gap-4">
+                    <ul class="flex gap-4 mt-3 sm:mt-0">
                         <li class="flex gap-2 items-center"><div aria-label="status" class="status status-accent"></div> Open</li>
                         <li class="flex gap-2 items-center"><div aria-label="status" class="status status-secondary"></div> Closed</li>
                     </ul>
@@ -73,7 +73,7 @@
                 </div>
 
                 
-                <div id="issueContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 p-6 bg-[#fafafa]">
+                <div id="issueContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 p-3 sm:p-6 bg-[#fafafa] rounded-bl-xl rounded-br-xl">
                     
                 </div>
             </div>
@@ -83,7 +83,7 @@
 <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
 
 <dialog id="issue_modal" class="modal modal-bottom sm:modal-middle">
-    <div class="modal-box p-6 rounded-xl">
+    <div class="modal-box p-3 sm:p-6 rounded-xl">
         <div id="issue-detail" class="space-y-6">
         </div>
         <div class="modal-action">

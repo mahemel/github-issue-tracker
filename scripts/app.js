@@ -205,7 +205,7 @@ loadAllIssues();
 document.getElementById('searchBtn').addEventListener('click', () => {
 
     const inputSearch = document.getElementById('search-input');
-    const searchValue = inputSearch.value;
+    const searchValue = inputSearch.value.trim();
 
     if(searchValue === '') {
         alert('Please enter keyword to search.')

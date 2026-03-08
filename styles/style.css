@@ -112,3 +112,10 @@
 .btn.bg-green.closed {
     background: #A855F7;
 }
+
+@media screen and (max-width: 767px) {
+.search-section input {
+    background-position-x: 3px;
+    padding-left: 20px;
+}    
+}
