@@ -1,26 +1,18 @@
-# Github Issue Tracker
+## GitHub Issue Tracker
 
-## 1️⃣ What is the difference between var, let, and const?
-- var:
-    - `var` is function scoped. It can be redeclared and updated. Var can be Hoisted and initialized with `undefined`
-- let: 
-    - `let` is block scoped. It can not be redeclared in the same scope. It can be updated. It can be hoisted but stays in the Temporal Dead Zone.
-- const:
-    - `const` is block scoped. It can not be redeclared or reassigned. It must be initialzed during declaration. 
+GitHub Issue Tracker is a web-based dashboard that allows developers to efficiently browse, search, and manage Development issues. With a clean and responsive interface, it simplifies monitoring project progress and staying organized.
 
-## 2️⃣ What is the spread operator (...)?
-- `spread` operator is used to expand or spread elements of an array or properties of an object into another array or object.
+---
 
-## 3️⃣ What is the difference between map(), filter(), and forEach()?
-- map(): 
-    - `map()` method creates a new array by transforming each elements of an existing array.
-- filter(): 
-    - `filter()` method creates a new array containing only the elements from the existing array while passing a condition.
-- forEach(): 
-    - It provides a clean and readable way to loop through elements without managing loop counters manually unlike a traditional for loop. 
+# Features
 
-## 4️⃣ What is an arrow function?
-- An **arrow function** is a shorter syntax for writing functions in JavaScript. It allows us to write functions in a more concise way.
+- View open and closed issues.
+- Search and filter issues by keywords, status, or labels.
+- Clean, intuitive, and responsive UI for quick access to issue details.
+- Lightweight, fast, and easy to use without authentication.
 
-## 5️⃣ What are template literals?
-- It provides a way to create strings in JavaScript using backticks (``) instead of quotes. It allows multi-line strings, expression interpolation, and easy insertion of variables.
+# Tech Stack
+
+- HTML5 – structure of the dashboard
+- CSS3 – styling, responsive layout
+- JavaScript – fetching API data and dynamic rendering
